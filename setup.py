@@ -11,7 +11,7 @@ setuptools.setup(
     description="A simple progress bar for simple projects",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/Inky1003/SimpleTextProgressBar/issues",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -20,4 +20,8 @@ setuptools.setup(
     ],
     keywords='progress bar command line console text window simple lightweight',
     python_requires='>=3.5',
+    project_urls={
+        'Bug Reports': 'https://github.com/Inky1003/SimpleTextProgressBar/issues',
+        'Source': 'https://github.com/Inky1003/SimpleTextProgressBar/',
+    },
 )
