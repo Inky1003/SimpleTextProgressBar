@@ -1,4 +1,4 @@
-# SimpleTextProgressBar by Inky V 1.1
+# SimpleTextProgressBar by Inky V 1.1.2
 #
 # This code is licensed under GPL-3.0-only.
 #   -You can modify this program
@@ -11,7 +11,7 @@
 #
 #   To use this progressbar, just start it with set_progress_bar()
 #   or print anything, and then change position with
-#   change_position(position, size, optional prefix) function.
+#   change_position(position, size, [prefix]) function.
 #
 #   Unluckly, If you try to write a text and then change the
 #   progress bar text, you will get the text mixed with the
@@ -24,8 +24,8 @@ def set_progress_bar():
     print("", end='')
 
 
-def change_position(position, size, prefix=""):
-    if position <= size:
+def change_position(position, size, prefix="", writeTheSameLineWhenFinished="false"):
+    if position < size or position == size:
         if position / size == 0:
             print("", end="\r")
             if prefix != "":
@@ -37,7 +37,10 @@ def change_position(position, size, prefix=""):
             print("", end="\r")
             if prefix != "":
                  print(prefix + " ", end='')
-            print("[100%]"+" [##################################################]")
+            if writeTheSameLineWhenFinished == "true":
+                print("[100%]"+" [##################################################]", end='')
+            else:
+                print("[100%]" + " [##################################################]")
 
 
         if 0 < position/size < 10/100:
